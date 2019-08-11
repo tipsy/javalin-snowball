@@ -49,12 +49,12 @@ public class Snowball {
             ctx.result("enter-email");
         });
 
-        JavalinVue.INSTANCE.setStateFunction(ctx -> {
+        JavalinVue.stateFunction = ctx -> {
             Map<String, Object> state = new HashMap<>();
             state.put("currentMsisdn", ctx.sessionAttribute("currentMsisdn"));
             state.put("verifiedMsisdn", ctx.sessionAttribute("verifiedMsisdn"));
             return state;
-        });
+        };
 
     }
 
